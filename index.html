@@ -64,7 +64,7 @@
 
         function choosePath(path) {
             // Change the document title to reflect the option clicked
-            document.title = `Adventure Game - You chose: ${path.charAt(0).toUpperCase() + path.slice(1)}`;
+            document.title = `Adventure Game - ${path.charAt(0).toUpperCase() + path.slice(1)}`;
 
             document.querySelectorAll('button').forEach(button => button.style.display = 'none');
 
