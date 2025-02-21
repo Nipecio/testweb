@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +7,7 @@
 <body id="body" class="desert-theme">
     <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
     <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
+    <audio id="sun-sound" src="sun.mp3" preload="auto"></audio>
     <div class="sun"></div>
     <div id="game-container">
         <h1 id="titlechange">Desert</h1>
@@ -18,6 +18,7 @@
         let health = 100;
         let coins = 100;
         const clickSound = document.getElementById('click-sound');
+        const sunSound = document.getElementById('sun-sound');
 
         function updateStatus() {
             document.getElementById('health').innerText = health;
@@ -35,7 +36,7 @@
             let button = document.createElement('button');
             button.innerHTML = text;
             button.classList.add('secondary-choice-btn');
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 clickSound.play();
                 onClick();
             });
@@ -50,6 +51,9 @@
         function updateStory(text) {
             document.getElementById('story').innerHTML = text;
         }
+
+        // Play sun sound when entering desert path
+        sunSound.play(); 
 
         let buySunButton = createButton("Buy Sunscreen", () => {
             updateStory("You purchased sunscreen for 10 coins and are now safe from the desert's heat.");
