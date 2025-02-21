@@ -433,4 +433,12 @@ body[id="body"].winning-theme .secondary-choice-btn:hover {
 }
 .restart-button-space:hover{ 
   background: #a00202 !important; /* Dark Blue */
+}body[id="body"].winning-theme .restart-button-jungle {
+  background: #2d2d2d !important;
+  /* Green */
+}
+
+body[id="body"].winning-theme .restart-button-jungle:hover {
+  background: #1f1f1f !important;
+  /* Dark Green */
 }

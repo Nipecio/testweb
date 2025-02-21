@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Desert Path</title>
 </head>
+
 <body id="body" class="desert-theme">
     <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
     <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
@@ -59,7 +61,7 @@
         }
 
         // Play sun sound when entering desert path
-        sunSound.play(); 
+        sunSound.play();
 
         let buySunButton = createButton("Buy Sunscreen", () => {
             updateStory("You purchased sunscreen for 10 coins and are now safe from the desert's heat.");
@@ -114,4 +116,5 @@
         updateStatus();
     </script>
 </body>
+
 </html>
