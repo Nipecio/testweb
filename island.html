@@ -158,6 +158,7 @@
             updateStory("You proceed to the boat so you can jump inside the sea.");
             coins -= 5;
             updateStatus();
+            removeButtons([expensiveBtn, cheapBtn])
 
             let continueBtn = createButton("Continue", () => {
                 health = 0;
