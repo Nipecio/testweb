@@ -175,10 +175,42 @@ body[id="body"].winning-theme .secondary-choice-btn:hover {
   border-radius: 5px;
   transition: .3s ease;
 }
-.choice-btn-desert:hover, .choice-btn-jungle:hover, .choice-btn-mountain:hover, .choice-btn-island:hover, .choice-btn-space:hover {
+.choice-btn-desert:hover {
   font: 20px poppins, sans-serif;
   font-size: 1em;
-  background: #444444;
+  background: #e69500;
+  transition: background 0.3s ease;
+  transform: scale(1.1);
+}
+
+.choice-btn-jungle:hover {
+  font: 20px poppins, sans-serif;
+  font-size: 1em;
+  background: #388e3c;
+  transition: background 0.3s ease;
+  transform: scale(1.1);
+}
+
+.choice-btn-mountain:hover {
+  font: 20px poppins, sans-serif;
+  font-size: 1em;
+  background: #929292;
+  transition: background 0.3s ease;
+  transform: scale(1.1);
+}
+
+.choice-btn-island:hover {
+  font: 20px poppins, sans-serif;
+  font-size: 1em;
+  background: #00b3ff;
+  transition: background 0.3s ease;
+  transform: scale(1.1);
+}
+
+.choice-btn-space:hover {
+  font: 20px poppins, sans-serif;
+  font-size: 1em;
+  background: #000000;
   transition: background 0.3s ease;
   transform: scale(1.1);
 }
