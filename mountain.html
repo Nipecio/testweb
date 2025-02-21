@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Mountain Path</title>
+</head>
+<body id="body" class="mountain-theme">
+    <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
+    <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
+    <div id="game-container">
+        <h1 id="titlechange">Mountain</h1>
+        <div id="story">Would you like to take the long or short path up the mountain?</div>
+        <div id="status">Health: <span id="health">100</span> | Coins: <span id="coins">100</span></div>
+    </div>
+    <script>
+        let health = 100;
+        let coins = 100;
+        const clickSound = document.getElementById('click-sound');
+        const rumbleSound = new Audio('wavenoise.mp3');
+        const rumbleSound2 = new Audio('wavenoise.mp3');
+        rumbleSound.loop = true;
+        rumbleSound2.loop = true;
+        rumbleSound.volume = 1.0;
+        rumbleSound2.volume = 0.6;
+
+        setTimeout(() => {
+            rumbleSound2.play();
+        }, 100);
+        rumbleSound.play();
+
+        let mountainBg = document.createElement('div');
+        mountainBg.classList.add('mountain-bg');
+        mountainBg.style.backgroundImage = 'url("mountain.png")';
+        mountainBg.id = 'mountain-bg';
+        document.body.appendChild(mountainBg);
+
+        setTimeout(() => {
+            const fadeInterval = setInterval(() => {
+                if (rumbleSound.volume > 0.1 || rumbleSound2.volume > 0.1) {
+                    rumbleSound.volume -= 0.1;
+                    rumbleSound2.volume -= 0.06;
+                } else {
+                    clearInterval(fadeInterval);
+                    rumbleSound.pause();
+                    rumbleSound2.pause();
+                    rumbleSound.volume = 1.0;
+                    rumbleSound2.volume = 0.6;
+                }
+            }, 20);
+        }, 1200);
+
+        function updateStatus() {
+            document.getElementById('health').innerText = health;
+            document.getElementById('coins').innerText = coins;
+            if (health <= 0) {
+                document.getElementById('game-container').style.backgroundColor = "#a80000";
+                document.getElementById('story').style.backgroundColor = "#f50000";
+                document.getElementById("body").style.backgroundColor = "#7a0000";
+                const deathSound = document.getElementById('death-sound');
+                deathSound.play();
+            }
+        }
+
+        function createButton(text, onClick) {
+            let button = document.createElement('button');
+            button.innerHTML = text;
+            button.classList.add('secondary-choice-btn');
+            button.addEventListener('click', function() {
+                clickSound.play();
+                onClick();
+            });
+            document.getElementById('game-container').appendChild(button);
+            return button;
+        }
+
+        function removeButtons(buttons) {
+            buttons.forEach(button => button.remove());
+        }
+
+        function updateStory(text) {
+            document.getElementById('story').innerHTML = text;
+        }
+
+        let longBtn = createButton("Long Path", () => {
+            updateStory("While making the long trek up the mountain, a mysterious old man approaches you. Do you want to talk to him?");
+            removeButtons([longBtn, shortBtn]);
+            let yesBtn = createButton("Yes", () => {
+                updateStory("You have chosen to talk to the old man. He tells you that he has a special quest for you. He says that he will give you 20 health points if you can answer his riddle. The riddle is: What has a head and a tail but no body?");
+                removeButtons([yesBtn, noBtn]);
+
+                let inputField = document.createElement('input');
+                inputField.setAttribute('type', 'text');
+                inputField.setAttribute('id', 'riddle-answer');
+                document.getElementById('game-container').appendChild(inputField);
+
+                let submitBtn = createButton("Submit", () => {
+                    let answer = inputField.value.toLowerCase();
+                    let correctAnswers = ["coin", "a coin", "coins"];
+                    inputField.remove();
+                    submitBtn.remove();
+
+                    if (correctAnswers.includes(answer)) {
+                        updateStory("Correct! The old man gives you 20 health points!");
+                        health += 20;
+                        updateStatus();
+                    } else {
+                        updateStory("The old man wacks you with his cane with surprising force for getting the riddle wrong and vanishes.");
+                        health -= 20;
+                        updateStatus();
+                    }
+
+                    let continueBtn = createButton("Continue", () => {
+                        updateStory("You get tired along your journey. Do you want to take a nap?");
+                        removeButtons([continueBtn]);
+
+                        let napYesBtn = createButton("Yes", () => {
+                            health += 15;
+                            updateStory("You decided to take a nap and gain 15 health points.");
+                            updateStatus();
+                            removeButtons([napYesBtn, napNoBtn]);
+
+                            let continueBtn2 = createButton("Continue", () => {
+                                updateStory("A mutated bear starts charging towards you. It stops a few feet away. Do you want to run away or stay?");
+                                removeButtons([continueBtn2]);
+
+                                let runBtn = createButton("Run", () => {
+                                    removeButtons([runBtn, stayBtn]);
+                                    health = 0;
+                                    updateStory("You turn around and sprint away as fast as you can, but what were you thinking? You can't outrun a bear! The bear catches up to you and eats you. <em><strong>Game Over.</strong></em>");
+                                    updateStatus();
+                                });
+
+                                let stayBtn = createButton("Stay", () => {
+                                    removeButtons([runBtn, stayBtn]);
+                                    health = 0;
+                                    updateStory("You and the bear have a staring contest, but the bear eventually gives up. However, the Game Master notices how close you were to escaping and snatches you up from heaven and crushes you. <em><strong>Game Over.</strong></em>");
+                                    updateStatus();
+                                });
+                            });
+                        });
+
+                        let napNoBtn = createButton("No", () => {
+                            updateStory("You decided not to take a nap. You know there isn't coffee right?");
+                            removeButtons([napYesBtn, napNoBtn]);
+
+                            let continueBtn3 = createButton("Continue", () => {
+                                updateStory("Your exhaustion causes you to hallucinate. You wander aimlessly and fall off a cliff. <em><strong>Game Over.</strong></em>");
+                                health = 0;
+                                updateStatus();
+                                removeButtons([continueBtn3]);
+                            });
+                        });
+                    });
+                });
+            });
+
+            let noBtn = createButton("No", () => {
+                updateStory("The old man turns out to be a witch and poisons you with a poison that can kill 1000 elephants. <em><strong>Game Over.</strong></em>");
+                health = 0;
+                updateStatus();
+                removeButtons([yesBtn, noBtn]);
+            });
+        });
+
+        let shortBtn = createButton("Short Path", () => {
+            updateStory("You fall off the mountain while trying to take the shortcut. <em><strong>Game Over.</strong></em>");
+            health = 0;
+            updateStatus();
+        });
+
+        updateStatus();
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Space Path</title>
+</head>
+<body id="body" class="space-theme">
+    <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
+    <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
+    <div id="game-container">
+        <h1 id="titlechange">Space</h1>
+        <div id="story">You spent so much money on gear and crew you didn't check the spaceship properly. The chamber opens and you all get sucked out. <em><strong>Game Over.</strong></em></div>
+        <div id="status">Health: <span id="health">0</span> | Coins: <span id="coins">100</span></div>
+    </div>
+    <script>
+        let health = 0;
+        let coins = 0;
+        const clickSound = document.getElementById('click-sound');
+        function updateStatus() {
+            document.getElementById('health').innerText = health;
+            document.getElementById('coins').innerText = coins;
+            if (health <= 0) {
+                document.getElementById('game-container').style.backgroundColor = "#a80000"; // Red
+                document.getElementById('story').style.backgroundColor = "#f50000"; // Lighter red
+                document.getElementById('body').style.backgroundColor = "#7a0000"; // Dark red
+                const deathSound = document.getElementById('death-sound');
+                deathSound.play();
+            }
+        }
+        let floatingElement = document.createElement('div');
+        floatingElement.classList.add('floating-element');
+        let image = document.createElement('img');
+        image.src = 'amongus.webp';
+        image.alt = 'Floating Image';
+        image.style.width = '100px';
+        image.style.height = 'auto';
+        floatingElement.appendChild(image);
+        document.body.appendChild(floatingElement);
+        setTimeout(function() {
+            floatingElement.remove();
+        }, 6000);
+        updateStatus();
+    </script>
+</body>
+</html>

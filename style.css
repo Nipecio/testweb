@@ -39,32 +39,122 @@
   text-align: center;
 }
 
+body[id="body"].desert-theme {
+  background: #ffd700 !important;
+}
+body[id="body"].desert-theme #game-container {
+  background-color: #ffb700 !important;
+}
+body[id="body"].desert-theme #story {
+  background-color: #cc9200 !important;
+}
+body[id="body"].desert-theme .secondary-choice-btn {
+  background-color: #e69500 !important;
+}
+body[id="body"].desert-theme .secondary-choice-btn:hover {
+  background-color: #b37400 !important;
+}
+
+body[id="body"].mountain-theme {
+  background: #808080 !important;
+}
+body[id="body"].mountain-theme #game-container {
+  background-color: #666666 !important;
+}
+body[id="body"].mountain-theme #story {
+  background-color: #4d4d4d !important;
+}
+body[id="body"].mountain-theme .secondary-choice-btn {
+  background-color: #595959 !important;
+}
+body[id="body"].mountain-theme .secondary-choice-btn:hover {
+  background-color: #404040 !important;
+}
+
+body[id="body"].jungle-theme {
+  background: #43a047 !important;
+}
+body[id="body"].jungle-theme #game-container {
+  background-color: #2e7d32 !important;
+}
+body[id="body"].jungle-theme #story {
+  background-color: #1b5e20 !important;
+}
+body[id="body"].jungle-theme .secondary-choice-btn {
+  background-color: #388e3c !important;
+}
+body[id="body"].jungle-theme .secondary-choice-btn:hover {
+  background-color: #2e7d32 !important;
+}
+
+body[id="body"].island-theme {
+  background: #00b3ff !important;
+}
+body[id="body"].island-theme #game-container {
+  background-color: #0091ea !important;
+}
+body[id="body"].island-theme #story {
+  background-color: #0277bd !important;
+}
+body[id="body"].island-theme .secondary-choice-btn {
+  background-color: #039be5 !important;
+}
+body[id="body"].island-theme .secondary-choice-btn:hover {
+  background-color: #0288d1 !important;
+}
+
+body[id="body"].space-theme {
+  background: #7a0000 !important;
+}
+body[id="body"].space-theme #game-container {
+  background-color: #a80000 !important;
+}
+body[id="body"].space-theme #story {
+  background-color: #f50000 !important;
+}
+
+
+body[id="body"].winning-theme {
+  background: #9c27b0 !important;
+}
+body[id="body"].winning-theme #game-container {
+  background-color: #7b1fa2 !important;
+}
+body[id="body"].winning-theme #story {
+  background-color: #6a1b9a !important;
+}
+body[id="body"].winning-theme .secondary-choice-btn {
+  background-color: #8e24aa !important;
+}
+body[id="body"].winning-theme .secondary-choice-btn:hover {
+  background-color: #7b1fa2 !important;
+}
+
 #titlechange {
   font: 2em sigmar, sans-serif;
-
 }
+
 #game-container {
   width: 60%;
   height:100%;
   margin: auto;
   margin-top: 12%;
   padding: 20px;
-  background-color: #0084ff;
+  background-color: #1a1a1a;
   border-radius: 10px;
   transition: .3s ease;
-
 }
 
 #game-container:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 #story {
   font: 20px poppins, sans-serif;
   min-height: 100px;
   padding: 20px;
-  background: #003166;
+  background: #2d2d2d;
   border-radius: 5px;
 }
 
@@ -73,98 +163,22 @@
   font: 15px poppins, sans-serif;
 }
 
-.choice-btn-desert {
+.choice-btn-desert, .choice-btn-jungle, .choice-btn-mountain, .choice-btn-island, .choice-btn-space {
   font: 20px poppins, sans-serif;
   font-size: 1em;
   margin: 10px;
   padding: 10px 20px;
-  border: none;
-  background: #00c4f5;
+  border: 2px solid #444444;
+  background: #333333;
   color: white;
   cursor: pointer;
   border-radius: 5px;
   transition: .3s ease;
 }
-.choice-btn-desert:hover {
-  font: 20px poppins, sans-serif;
-  background: #b38c00;
-  transition: background 0.3s ease;
-  font-size: 1em;
-  transform: scale(1.1);
-}
-.choice-btn-jungle {
+.choice-btn-desert:hover, .choice-btn-jungle:hover, .choice-btn-mountain:hover, .choice-btn-island:hover, .choice-btn-space:hover {
   font: 20px poppins, sans-serif;
   font-size: 1em;
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  background: #00c4f5;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: .3s ease;
-}
-.choice-btn-jungle:hover {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  background: #00ad5c;
-  transition: background 0.3s ease;
-  transform: scale(1.1);
-}
-.choice-btn-mountain {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  background: #00c4f5;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: .3s ease;
-}
-.choice-btn-mountain:hover {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  background: #5b83ae;
-  transition: background 0.3s ease;
-  transform: scale(1.1);
-}
-.choice-btn-island {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  background: #00c4f5;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: .3s ease;
-}
-.choice-btn-island:hover {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  background: #006394;
-  transition: background 0.3s ease;
-  transform: scale(1.1);
-}
-.choice-btn-space {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  background: #00c4f5;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: .3s ease;
-}
-.choice-btn-space:hover {
-  font: 20px poppins, sans-serif;
-  font-size: 1em;
-  background: #000000;
+  background: #444444;
   transition: background 0.3s ease;
   transform: scale(1.1);
 }
@@ -186,7 +200,7 @@
   opacity: 0.8;
 }
 .secondary-choice-btn {
-  background-color: #0c79ed; 
+  background-color: #ffb700; 
   border: none;
   color: white;
   padding: 10px 20px;
