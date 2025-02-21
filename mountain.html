@@ -166,6 +166,7 @@
             updateStory("You fall off the mountain while trying to take the shortcut. <em><strong>Game Over.</strong></em>");
             health = 0;
             updateStatus();
+            removeButtons([longBtn, shortBtn])
         });
 
         updateStatus();
