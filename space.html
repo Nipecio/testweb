@@ -7,12 +7,18 @@
 <body id="body" class="space-theme">
     <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
     <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
+    <button id="restart-button"  class="restart-button-space">Restart</button>
+
     <div id="game-container">
         <h1 id="titlechange">Space</h1>
         <div id="story">You spent so much money on gear and crew you didn't check the spaceship properly. The chamber opens and you all get sucked out. <em><strong>Game Over.</strong></em></div>
         <div id="status">Health: <span id="health">0</span> | Coins: <span id="coins">100</span></div>
     </div>
     <script>
+        const restartButton = document.getElementById('restart-button');
+        restartButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
         let health = 0;
         let coins = 0;
         const clickSound = document.getElementById('click-sound');

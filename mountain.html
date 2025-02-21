@@ -7,6 +7,7 @@
 <body id="body" class="mountain-theme">
     <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
     <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
+    <button id="restart-button"  class="restart-button-mountain">Restart</button>
     <div id="game-container">
         <h1 id="titlechange">Mountain</h1>
         <div id="story">Would you like to take the long or short path up the mountain?</div>
@@ -22,6 +23,11 @@
         rumbleSound2.loop = true;
         rumbleSound.volume = 1.0;
         rumbleSound2.volume = 0.6;
+
+        const restartButton = document.getElementById('restart-button');
+        restartButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
 
         setTimeout(() => {
             rumbleSound2.play();

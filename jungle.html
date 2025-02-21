@@ -8,12 +8,18 @@
     <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
     <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
     <audio id="victory-sound" src="victorynoise.mp3" preload="auto"></audio> 
+    <button id="restart-button"  class="restart-button-jungle">Restart</button>
+
     <div id="game-container">
         <h1 id="titlechange">Jungle</h1>
         <div id="story">You find yourself at the entrance of a dense jungle. A local guide offers to help you navigate through it. Do you accept their help or try to explore on your own?</div>
         <div id="status">Health: <span id="health">100</span> | Coins: <span id="coins">100</span></div>
     </div>
     <script>
+        const restartButton = document.getElementById('restart-button');
+        restartButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
         let health = 100;
         let coins = 100;
         const clickSound = document.getElementById('click-sound');

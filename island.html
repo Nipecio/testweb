@@ -8,12 +8,18 @@
 <body id="body" class="island-theme">
     <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
     <audio id="death-sound" src="deathsound.mp3" preload="auto"></audio>
+    <button id="restart-button" class="restart-button-island">Restart</button>
+
     <div id="game-container">
         <h1 id="titlechange">Island</h1>
         <div id="story">To explore the island, you must buy scuba diving gear from a shop nearby. Do you choose the more expensive 20 coins scuba gear from a smiling merchant or the cheaper 5 coins scuba gear sold by a fourteen-year-old?</div>
         <div id="status">Health: <span id="health">100</span> | Coins: <span id="coins">100</span></div>
     </div>
     <script>
+        const restartButton = document.getElementById('restart-button');
+        restartButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
         let health = 100;
         let coins = 100;
         const clickSound = document.getElementById('click-sound');
