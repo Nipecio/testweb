@@ -60,25 +60,25 @@
                 updateStory("Inside the temple, you find two paths. One is marked with a golden snake symbol, the other with a silver monkey symbol. Which do you choose?");
                 removeButtons([continueBtn]);
 
-                let snakeBtn = createButton("Snake Path", () => {
-                    updateStory("You follow the snake path and find a room filled with actual snakes! Do you try to sneak past them or run back?");
+                let snakeBtn = createButton("Snake", () => {
+                    updateStory("You follow the snake path and find a room filled with several poisonous snakes! Do you try to sneak past them or run back?");
                     removeButtons([snakeBtn, monkeyBtn]);
 
-                    let sneakBtn = createButton("Sneak Past", () => {
-                        updateStory("You successfully sneak past the snakes and find an ancient treasure worth 50 coins! A secret door opens revealing a safe passage out.");
+                    let sneakBtn = createButton("Sneak", () => {
+                        updateStory("You successfully sneak past the snakes and find an ancient treasure worth 50 coins! A secret door opens revealing a safe passage out to your freedom.");
                         coins += 50;
                         updateStatus();
                         removeButtons([sneakBtn, runBtn]);
 
-                        let escapeBtn = createButton("Take Safe Passage", () => {
+                        let escapeBtn = createButton("Safe Passage", () => {
                             document.getElementById('body').classList.add('winning-theme');
-                            updateStory("Congratulations! You've successfully escaped the temple with the treasure. You are the first explorer to survive the jungle! <em><strong>You Win!</strong></em>");
+                            updateStory("Congratulations! You have beaten the Game Master at his game. He wishes you best wishes... <em><strong>You Win!</strong></em>");
                             updateStatus();
                             removeButtons([escapeBtn]);
                         });
                     });
 
-                    let runBtn = createButton("Run Back", () => {
+                    let runBtn = createButton("Run", () => {
                         updateStory("While running back, you step on a snake's tail. It bites you. <em><strong>Game Over.</strong></em>");
                         health = 0;
                         updateStatus();
@@ -86,7 +86,7 @@
                     });
                 });
 
-                let monkeyBtn = createButton("Monkey Path", () => {
+                let monkeyBtn = createButton("Monkey", () => {
                     updateStory("You follow the monkey path and encounter a group of angry monkeys. They seem interested in your coins.");
                     removeButtons([snakeBtn, monkeyBtn]);
 
@@ -98,14 +98,14 @@
 
                         let enterBtn = createButton("Enter Passage", () => {
                             health = 0;
-                            updateStory("The passage leads to an ancient trap. You fall into a pit of spikes. <em><strong>Game Over.</strong></em>");
+                            updateStory("The passage leads to a trap made by the Game Master. <em><strong>Game Over.</strong></em>");
                             updateStatus();
                             removeButtons([enterBtn]);
                         });
                     });
 
                     let fightBtn = createButton("Fight Monkeys", () => {
-                        updateStory("You try to fight the monkeys but they overwhelm you. <em><strong>Game Over.</strong></em>");
+                        updateStory("You try to fight the monkeys but they use their monkey noises to distract you and the proceed to bite your ear and 16 hairs of your body. <em><strong>Game Over.</strong></em>");
                         health = 0;
                         updateStatus();
                         removeButtons([giveBtn, fightBtn]);
