@@ -74,14 +74,14 @@
                     removeButtons([snakeBtn, monkeyBtn]);
 
                     let sneakBtn = createButton("Sneak Past", () => {
-                        updateStory("You successfully sneak past the snakes and find an ancient treasure worth 50 coins! A secret door opens revealing a safe passage out.");
-                        coins += 50;
+                        updateStory("You successfully sneak past the snakes and find an ancient treasure worth 1000 coins! A secret door opens revealing a safe passage out.");
+                        coins += 1000;
                         updateStatus();
                         removeButtons([sneakBtn, runBtn]);
 
                         let escapeBtn = createButton("Take Safe Passage", () => {
                             document.getElementById('body').classList.add('winning-theme');
-                            updateStory("Congratulations! You've successfully escaped the temple with the treasure. You are the first explorer to survive the jungle! <em><strong>You Win!</strong></em>");
+                            updateStory("Congratulations! You've successfully escaped the temple with the treasure. You are the first explorer to survive the jungle! <em><strong>You've won...for now.</strong></em>");
                             updateStatus();
                             victorySound.play(); // Play victory noise
                             removeButtons([escapeBtn]);
