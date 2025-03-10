@@ -1,49 +1,40 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <link rel="shortcut icon" type = "x-icon" href="indexicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <title>Adventure Game</title>
-
 </head>
-<body id="body" style="background-color: #000000 !important;">
-    <audio id="click-sound" src="buttonclick.mp3" preload="auto"></audio>
-    <div id="game-container">
-        <h1 id="titlechange">Choose Your Path</h1>
-        <div id="story">Welcome to the Adventure Game! Choose your path to escape the Game Master...</div>
-        <div id="status">Health: <span id="health">100</span> | Coins: <span id="coins">100</span></div>
-        <button class="choice-btn-desert">Desert</button>
-        <button class="choice-btn-jungle">Jungle</button>
-        <button class="choice-btn-mountain">Mountain</button>
-        <button class="choice-btn-island">Island</button>
-        <button class="choice-btn-space">Space</button>
-    </div>
-    <script>
-        let health = 100;
-        let coins = 100;
-        const clickSound = document.getElementById('click-sound');
+<body>
+    <section id="landing-page">
+        <div class="landing-page-main">
+            <img class='moon-clipart' src="moon-clipart.png" alt="">
+            <h1 class="landing-page-main-text">Anay Sura, <br> Welcome</h1>
+            <h2 class="landing-page-side-text">UI/UX Designer</h2>
+            <p class="landing-page-intersetellar-quote"><span class="quote-bold">"</span>Mankind was born on Earth, it was never meant to die here<span class="quote-bold">"</span></p>
+            <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });" class="landing-page-main-button-contact">Projects</button>
+        </div>
+    </section>
+    <section class="about-page">
+        
+            <div class="about1"><h2 class="about-title">About Me</h2><p class="about1-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia dolorum ab expedita. Porro delectus saepe, expedita amet consectetur laudantium quod quis et corrupti assumenda! Accusantium exercitationem, esse molestias rerum consequuntur sequi repellendus, illo, debitis quia cumque quod. Laborum unde nam voluptatum placeat enim neque, fugit ullam quis non esse dolore necessitatibus, molestiae cumque sunt recusandae officia.</p></div>
+        </div>
+        <img class="blackhole" src="blackhole.jpg" alt="">
+    </section>
+    <section id="projects">
+        <img class="plane" src="plane.png" alt="">
+    </section>
 
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', () => {
-                clickSound.play();
-                setTimeout(() => {
-                    if (button.classList.contains('choice-btn-desert')) window.location.href = 'desert.html';
-                    if (button.classList.contains('choice-btn-jungle')) window.location.href = 'jungle.html';
-                    if (button.classList.contains('choice-btn-mountain')) window.location.href = 'mountain.html';
-                    if (button.classList.contains('choice-btn-island')) window.location.href = 'island.html';
-                    if (button.classList.contains('choice-btn-space')) window.location.href = 'space.html';
-                }, 100);
-            });
-        });
 
-        function updateStatus() {
-            document.getElementById('health').innerText = health;
-            document.getElementById('coins').innerText = coins;
-        }
 
-        updateStatus();
-    </script>
+
+
+
+
+
+
+
+    <script src="main.js"></script>
 </body>
 </html>
