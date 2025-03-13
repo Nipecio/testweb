@@ -4,149 +4,168 @@
     box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
-
 body {
-    background: linear-gradient(black, rgb(1, 2, 36), rgb(0, 0, 95), rgb(6, 207, 243));
+    background-color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#landing-page {
-    height: 100vh;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
-
-.landing-page-main {
-    justify-items: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
-.landing-page-main-text {
-    text-align: center;
-    color: white;
-    align-self: end;
-    font-size: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.moon-clipart {
-    position: absolute;
-    top: -50px;
-    left: -150px; /* Adjusted to prevent overflow */
-    z-index: -1;
-    opacity: 40%;
-    max-width: 100%;
-}
-
-.landing-page-main-button-contact {
-    height: fit-content;
-    width: fit-content;
-    padding: 15px 20px;
-    align-self: center;
-    border-radius: 5px;
-    border: none;
-    font-size: 20px;
-    background-color: rgb(64, 83, 255);
-    position: relative;
-    box-shadow: 0 0 10px rgba(64, 83, 255, 0.7);
-    cursor: pointer;
-    color: white;
-}
-
-.landing-page-side-text {
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    align-self: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    grid-area: 2 / 1 /3 /2;
-}
-
-.landing-page-intersetellar-quote {
-    grid-area: 2 / 1 / 3 / 2;
-    color: white;
-    font-size: 20px;
-    padding: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    align-self: end;
-    text-align: center;
-}
-
-.quote-bold {
-    font-weight: 900;
-}
-
-.about-page {
-    height: 100vh;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-.about-title {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    font-size: 40px;
-    margin-top: 100px;
-    margin-left: 20px;
-    justify-self: center;
-}
-
-.about1 {
-    height: 80%;
-    width: 90%;
-    grid-area: 1 / 1 / 2 / 2;
-    margin: 15px;
-    border-radius: 8px;
-    align-self: end;
-    justify-self: center;
-}
-
-.about1-text {
-    color: white;
-    padding-top: 70px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.5;
-    text-align: center;
-    align-self: end;
-    align-content: end;
-    justify-items: end;
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.blackhole {
-    grid-area: 2 / 1 / 3 / 2;
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    justify-self: center;
-    align-self: center;
-    border-radius: 100px;
-    position: relative;
-    box-shadow: 0 0 50px rgba(64, 83, 255, 0.7);
-    z-index: 1;
-}
-
-#projects {
+.hero {
     height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
-.plane {
-    height: 300px;
+.title-main {
+    text-shadow: 
+        2px 2px 5px rgb(245, 0, 0),  /* Shadow to the right and bottom */
+        -2px -2px 5px rgb(94, 255, 0), /* Shadow to the left and top */
+        2px -2px 5px rgb(0, 47, 255),  /* Shadow to the top right */
+        -2px 2px 5px rgb(238, 255, 0); 
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
     grid-area: 2 / 2 / 3 / 3;
-    align-self: end;
+    text-align: center;
+}
+
+#container {
+    justify-content: center;
+    gap: 10px;
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 95vh;
+    margin: 10px;
+    padding: 10px;
+    align-content: center;
+}
+
+.one {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 610px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(255, 0, 0);
+}
+
+.two {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(255, 174, 0);
+}
+
+.three {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(255, 251, 0);
+}
+
+.four {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 610px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(0, 255, 42);
+}
+
+.five {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(0, 153, 255);
+}
+
+.six {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(162, 0, 255);
+}
+
+.seven {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 610px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(255, 0, 221);
+}
+
+.eight {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 300px;
+    width: 610px;
+    background-color: rgb(153, 153, 153);
+    box-shadow: 0px 0px 15px 1px rgb(0, 255, 255);
+}
+
+.oytest {
+    background-color: red;
+}
+
+.button-forall {
+    align-self: center;
     justify-self: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.box-text-real {
+    margin: 10px;
+    text-align: center;
+}
+
+.hover-for-btn {
+    transition: .3s ease-in-out;
+}
+
+.hover-for-btn:hover {
+    transform: scale(1.1);
+}
+
+.box-text {
+    margin-top: 10px;
+}
+.one, .two, .three, .four, .five, .six, .seven, .eight {
+    flex-grow: 1; /* Makes the box expand to fill available space */
+}
+
+
+@media (max-width: 630px) {
+    .title-main {
+        font-size: 50px;
+    }
 }
