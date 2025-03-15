@@ -351,3 +351,30 @@ body.light-mode .theme-toggle:hover {
         color: white;
     }
 }
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar {
+    width: 10px; /* Width for vertical scrollbar */
+    height: 10px; /* Height for horizontal scrollbar */
+}
+
+/* Scrollbar thumb (the moving part) */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255); /* Color of the scrollbar */
+}
+
+/* Scrollbar track when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 255, 255); /* Lighter color when hovered */
+}
+
+/* Scrollbar track (background when visible) */
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0); /* Darker background */
+}
+
+/* Optional: Scrollbar corner */
+::-webkit-scrollbar-corner {
+    background: black; /* Corner background */
+}
+
