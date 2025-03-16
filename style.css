@@ -99,7 +99,19 @@ li:hover {
     grid-area: 2 / 2 / 3 / 3;
     position: relative;
     padding-bottom: 60px;  /* Give space for the button */
+    animation: slidein 1s ease-in forwards;
 }
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 
 .mini {
     font-style: italic;
@@ -108,6 +120,7 @@ li:hover {
     grid-area: 3 / 2 / 4 / 3;
     text-align: center;
     z-index: 10;
+    animation: slidein 1s ease-in forwards;
 }
 
 .three-layered {
@@ -180,6 +193,8 @@ li:hover {
     align-items: center;
 }
 
+
+
 .textforcards {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     justify-self: center;
@@ -201,6 +216,7 @@ li:hover {
     flex-shrink: 1;
     margin-right: 50px;
     margin-left: 50px;
+    animation: slidein 1s ease-in forwards;
 }
 
 .first-card:hover, .second-card:hover, .third-card:hover {
@@ -248,8 +264,6 @@ li:hover {
     }
 }
 
-
-  
 
 
 /* Button styling */
