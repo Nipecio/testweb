@@ -126,12 +126,12 @@ li:hover {
 }
 
 .white-top-layer:hover, .white-bottom-layer:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0px 0px 100px rgb(255, 255, 255);
 }
 
 .black-middle-layer:hover {
-    transform: scale(1.1);
+    transform: scale(1.05               );
     box-shadow: 0px 0px 100px rgb(0, 0, 0);
 }
 
@@ -170,6 +170,87 @@ li:hover {
     color: white;
 }
 
+.three-cards {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.textforcards {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    justify-self: center;
+    align-self: center;
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.first-card, .second-card, .third-card {
+    height: 500px;
+    width: 400px;
+    background: white;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: .2s ease-in-out;
+    flex-shrink: 1;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.first-card:hover, .second-card:hover, .third-card:hover {
+    transform: scale(1.02);
+}
+
+.paratext {
+    grid-area: 2 / 1 / 3 / 4;
+    padding: 20px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+@media (max-width: 1000px) {
+    .three-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px; /* Space between the cards */
+        margin-top: 50px; /* Adjust as needed */
+    }
+
+    .first-card, .second-card, .third-card {
+        flex-shrink: 1;
+        width: 300px;
+        margin-right: 0d;
+    }
+
+    /* Ensure the parent container has enough space */
+    .three-layered {
+        min-height: 150vh; /* Increase height to prevent overlap */
+    }
+}
+
+
+  
+
+
 /* Button styling */
 .theme-toggle {
     position: absolute;
@@ -185,6 +266,16 @@ li:hover {
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
     opacity: 0.8;
+}
+
+body.light-mode .first-card,body.light-mode .second-card,body.light-mode .third-card {
+    background-color: black;
+    color: white;
+}
+
+body.light-mode .footer {
+    background-color: black;
+    color: white;
 }
 
 body.light-mode li:hover {
@@ -377,4 +468,5 @@ body.light-mode .theme-toggle:hover {
 ::-webkit-scrollbar-corner {
     background: black; /* Corner background */
 }
+
 
