@@ -222,7 +222,7 @@ li:hover a{
 
 .first-card.show, .second-card.show, .third-card.show {
     opacity: 1;
-    animation: fadesecond 2s ease-in-out; /* 3 second animation */
+    animation: fadesecond 1.5s ease-in-out; /* 3 second animation */
 }
 
 .textforcards {
