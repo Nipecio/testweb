@@ -6,31 +6,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
+<body class="thebodyfr">
+    
     <nav>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Other</li>
-            <li>Info</li>
+            <li><a class="thelinks" href="index.html">Home</a></li>
+            <li><a class="thelinks" href="about.html">About</a></li>
+            <li><a class="thelinks" href="other.html">Other</a></li>
+            <li><a class="thelinks" href="info.html">Info</a></li>
         </ul>
     </nav>
     <section class="container">
         <div class="slider-wrapper">
             <div class="slider">
-                <img id="slideone" src="hole.jpg" alt="">
-                <img id="slide-2" src="tower.jpg" alt="">
-                <img id="slide-3" src="stairs.jpg" alt="">
+                <img id="slideone" src="images/hole.jpg" alt="">
+                <img id="slide-2" src="images/tower.jpg" alt="">
+                <img id="slide-3" src="images/stairs.jpg" alt="">
             </div>
             <div class="slider-nav">
-                <a href="#slideone"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>
+                <a onclick="imageforone();" href="#slideone"></a>
+                <a onclick="imagefortwo();" href="#slide-2"></a>
+                <a onclick="imageforthree();" href="#slide-3"></a>
             </div>
         </div>
     </section>
+    
+        <p class="imageonetext">Image one: Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias repellendus voluptate nostrum facere eveniet, neque, minus nihil veritatis ab, illum voluptates. Quod dolores deserunt facilis non aut, perferendis eum quas unde consequatur molestias optio modi quaerat tempore quae? Quia itaque qui animi. Sequi, unde dolore adipisci inventore quo vitae nam ratione maiores ipsum architecto assumenda voluptate reiciendis, possimus eligendi?</p>
+    
+    <p class="imagetwotext">Image two: Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias repellendus voluptate nostrum facere eveniet, neque, minus nihil veritatis ab, illum voluptates. Quod dolores deserunt facilis non aut, perferendis eum quas unde consequatur molestias optio modi quaerat tempore quae? Quia itaque qui animi. Sequi, unde dolore adipisci inventore quo vitae nam ratione maiores ipsum architecto assumenda voluptate reiciendis, possimus eligendi?</p>
+    <p class="imagethreetext">Image three: Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias repellendus voluptate nostrum facere eveniet, neque, minus nihil veritatis ab, illum voluptates. Quod dolores deserunt facilis non aut, perferendis eum quas unde consequatur molestias optio modi quaerat tempore quae? Quia itaque qui animi. Sequi, unde dolore adipisci inventore quo vitae nam ratione maiores ipsum architecto assumenda voluptate reiciendis, possimus eligendi?</p>
+    <script src="main.js"></script>
 </body>
 </html>

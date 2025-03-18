@@ -1,16 +1,34 @@
 function toggleTheme() {
-    const body = document.body;
-    const isLightMode = body.classList.toggle("light-mode");
-
-    // Save the theme preference in localStorage
-    localStorage.setItem("theme", isLightMode ? "light" : "dark");
+    document.body.classList.toggle("light-mode");
+    
 }
 
-// Apply the saved theme on page load
-document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "light") {
-        document.body.classList.add("light-mode");
-    }
-});
+
+function imageforone() {
+
+    document.querySelector('.imagetwotext').classList.remove('showtextfortwo');
+    document.querySelector('.imagethreetext').classList.remove('showtextforthree');
+    document.querySelector('.imageonetext').classList.add('showtextforone');
+
+    
+
+}
+
+function imagefortwo() {
+
+    document.querySelector('.imageonetext').classList.remove('showtextforone');
+    document.querySelector('.imagethreetext').classList.remove('showtextforthree');
+    document.querySelector('.imagetwotext').classList.add('showtextfortwo');
+
+    
+}
+
+function imageforthree() {
+
+    document.querySelector('.imagetwotext').classList.remove('showtextfortwo');
+    document.querySelector('.imageonetext').classList.remove('showtextforone');
+    document.querySelector('.imagethreetext').classList.add('showtextforthree');
+
+    
+}

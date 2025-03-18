@@ -49,9 +49,15 @@ li {
     border-radius: 5px;
 }
 
-li:hover {
+.thelinks {
+    text-decoration: none;
+    color: white;
+    background: none;
+}
+
+
+li:hover a{
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
 }
 
 .circle1 {
@@ -226,6 +232,58 @@ li:hover {
     padding: 20px;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.imageonetext {
+    display: none;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.imagetwotext {
+    display: none;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.imagethreetext {
+    display: none;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.showtextforone {
+    display: block;
+    animation: fade .3s ease-in;
+}
+
+.showtextfortwo {
+    display: block;
+    animation: fade .3s ease-in;
+}
+
+.showtextforthree {
+    display: block;
+    animation: fade .3s ease-in;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .footer {
@@ -410,6 +468,14 @@ body.light-mode .three-headers-middle    {
 }
 
 body.light-mode .three-text {
+    color: white;
+}
+
+body.light-mode .thelinks{
+    color: black;
+}
+
+body.light-mode li:hover a {
     color: white;
 }
 
