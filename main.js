@@ -32,3 +32,25 @@ function imageforthree() {
 
     
 }
+
+// Call this function on page load to set initial visibility
+function checkCardVisibility() {
+    const cards = document.querySelectorAll('.first-card, .second-card, .third-card');
+    
+    cards.forEach(card => {
+      const cardPosition = card.getBoundingClientRect();
+      
+      // Check if card is in viewport
+      if (cardPosition.top < window.innerHeight && cardPosition.bottom >= 0) {
+        card.classList.add('show');
+      } else {
+        card.classList.remove('show'); // Remove if not in viewport
+      }
+    });
+  }
+  
+  // Set up scroll event listener
+  window.addEventListener('scroll', checkCardVisibility);
+  
+  // Run on initial page load to check initial positions
+  document.addEventListener('DOMContentLoaded', checkCardVisibility);

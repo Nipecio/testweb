@@ -199,7 +199,31 @@ li:hover a{
     gap: 20px;
 }
 
+.first-card, .second-card, .third-card {
+    height: 500px;
+    width: 400px;
+    background: white;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: .2s ease-in-out; /* Keep the hover transition */
+    flex-shrink: 1;
+    opacity: 0;
+}
 
+/* Add this animation for when cards become visible */
+@keyframes fadesecond {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.first-card.show, .second-card.show, .third-card.show {
+    opacity: 1;
+    animation: fadesecond 2s ease-in-out; /* 3 second animation */
+}
 
 .textforcards {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
