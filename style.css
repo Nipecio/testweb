@@ -214,6 +214,105 @@ li:hover a{
     opacity: 0;
 }
 
+/* Add these styles to your existing CSS */
+
+/* Hide the hamburger menu by default on larger screens */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Full screen nav overlay */
+  .nav-overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-overlay ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .nav-overlay li {
+    margin: 10px 0;
+  }
+  
+  .nav-overlay a {
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* Hamburger icon animation */
+  .change .line1 {
+    transform: translate(0, 9px) rotate(-45deg);
+  }
+  
+  .change .line2 {
+    opacity: 0;
+  }
+  
+  .change .line3 {
+    transform: translate(0, -9px) rotate(45deg);
+  }
+  
+  /* Light mode adjustments */
+  body.light-mode .hamburger-line {
+    background-color: black;
+  }
+  
+  body.light-mode .nav-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  body.light-mode .nav-overlay a {
+    color: black;
+  }
+  
+  /* Media query for screens under 600px */
+  @media (max-width: 600px) {
+    /* Show hamburger menu and hide regular nav */
+    .hamburger-menu {
+      display: block;
+    }
+    
+    nav > ul {
+      display: none;
+    }
+  }
+
+.bold {
+    font-weight: 600;
+}
+
 /* Add this animation for when cards become visible */
 @keyframes fadesecond {
     0% { opacity: 0; }

@@ -62,3 +62,63 @@ window.addEventListener('scroll', checkCardVisibility);
 
 // Run on initial page load to check initial positions
 document.addEventListener('DOMContentLoaded', checkCardVisibility);
+
+// Add this code to your main.js file
+
+// Function to toggle hamburger menu animation and show/hide nav overlay
+function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
+    
+    hamburger.classList.toggle('change');
+    
+    if (hamburger.classList.contains('change')) {
+      // Open the navigation
+      navOverlay.style.height = '100%';
+    } else {
+      // Close the navigation
+      navOverlay.style.height = '0';
+    }
+  }
+  
+  // Close menu when a navigation link is clicked
+  function closeMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
+    
+    hamburger.classList.remove('change');
+    navOverlay.style.height = '0';
+  }
+  
+  // Add event listeners when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Create hamburger menu and nav overlay if they don't exist
+    if (!document.querySelector('.hamburger-menu')) {
+      // Create hamburger icon
+      const hamburger = document.createElement('div');
+      hamburger.className = 'hamburger-menu';
+      hamburger.innerHTML = `
+        <div class="hamburger-line line1"></div>
+        <div class="hamburger-line line2"></div>
+        <div class="hamburger-line line3"></div>
+      `;
+      hamburger.addEventListener('click', toggleMenu);
+      document.body.appendChild(hamburger);
+      
+      // Create navigation overlay
+      const navOverlay = document.createElement('div');
+      navOverlay.className = 'nav-overlay';
+      
+      // Clone existing navigation menu for the overlay
+      const navMenu = document.querySelector('nav ul').cloneNode(true);
+      navOverlay.appendChild(navMenu);
+      
+      // Add event listeners to all links in the overlay
+      const navLinks = navOverlay.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      
+      document.body.appendChild(navOverlay);
+    }
+  });
