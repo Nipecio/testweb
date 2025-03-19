@@ -55,6 +55,21 @@ li {
     background: none;
 }
 
+.thelinks2 {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background: none;
+}
+
+.fun:hover {
+    background-color: #000000;
+}
+
+.fun:hover a{
+    color: white;
+}
+
+
 
 li:hover a{
     color: rgb(0, 0, 0);
@@ -732,13 +747,17 @@ body.light-mode .theme-toggle:hover {
     width: 100%;
 }
 
+.contact-body {
+    background-color: white;
+}
+
 .contact-container {
-    background: #111;
+    background: #000000;
     color: #fff;
     font-family: Arial, sans-serif;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 90%;
     max-width: 400px;
@@ -753,7 +772,6 @@ body.light-mode .theme-toggle:hover {
 .contact-description {
     font-size: 14px;
     margin-bottom: 20px;
-    opacity: 0.8;
 }
 
 .contact-input-group {
@@ -773,17 +791,17 @@ body.light-mode .theme-toggle:hover {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: #222;
+    background: #494949;
     color: #fff;
     font-size: 14px;
     outline: none;
 }
 
 .contact-button {
-    background: #fff;
-    color: #000;
+    background: none;
+    color: #ffffff;
     padding: 10px 15px;
-    border: none;
+    border: 1px  solid white;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
@@ -791,6 +809,6 @@ body.light-mode .theme-toggle:hover {
 }
 
 .contact-button:hover {
-    background: #000000;
-    color: white;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
 }
