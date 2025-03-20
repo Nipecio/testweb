@@ -1,65 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>  
-    <div class="hero">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <nav>
-            <ul>
-                <li><a class="thelinks" href="index.html">Home</a></li>
-                <li><a class="thelinks" href="about.html">About</a></li>
-                <li><a class="thelinks" href="info.html">Info</a></li>
-                <li><a class="thelinks" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <h1 class="hero-text">Hey, welcome.</h1>
-        <h3 class="mini">Minimalism is key</h3>
-        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-    </div>
-    <div class="three-layered">
-        <div class="white-top-layer">
-            <h1 class="three-headers">Lorem Ipsum</h1>
-            <p class="three-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius consequatur molestiae, reprehenderit perspiciatis sed ad quas in. Fugit corrupti earum iure consequuntur minima architecto modi eum ratione illo, deleniti dignissimos nostrum tempore ducimus similique esse?</p>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav-hero">
+      <ul class="nav-ul">
+        <a class="navlinksactive" href="index.html"><li class="links">HOME</li></a>
+        <a class="navlinksactive" href="about.html"><li class="links">ABOUT</li></a>
+        <a class="navlinksactive" href="info.html"><li class="links">INFO</li></a>
+        <a class="navlinksactive" href="contact.html"><li class="links">CONTACT</li></a>
+      </ul>
+    </nav>
+    <section id="divfortower">
+      
+      <h1 class="main-text">Tower</h1>
+      <div class="imageholder"></div>
+      <div class="overlay"></div>
+      <button class="first-btn">
+        <a class="firstbtnfrfr" href="#nextsection">Next Section</a>
+      </button>
+    </section>
+    <section id="nextsection">
+      <div class="firstdiv">
+        <p class="thetextfirstdiv">
+          <span class="firstspan">Text</span><br/><br/>Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Nisi quis tempore rem mollitia
+          tempora impedit hic aut sint ratione perferendis labore facilis
+          suscipit consequatur optio perspiciatis, beatae eligendi alias, iusto
+          nostrum adipisci? Quae voluptatibus vel, repudiandae ullam porro
+          consectetur officiis ratione perferendis ex tenetur nemo delectus
+          quaerat iste obcaecati harum doloremque ad voluptate odio,
+          consequatur, nostrum recusandae? Illo omnis cupiditate beatae officia
+          quibusdam voluptatibus adipisci, repellat nam asperiores, similique
+          magni voluptates? Hic inventore ut iure architecto sequi quibusdam
+          quaerat quisquam fuga amet fugit libero quia, suscipit, quam aliquam
+          voluptatibus ea! Neque impedit ipsam quae exercitationem numquam vero
+          minima quaerat libero deserunt nostrum officiis culpa nemo quia,
+          tempore reiciendis quasi assumenda expedita debitis! Earum deleniti
+          sequi deserunt non, tempora reiciendis numquam! Cum dolore soluta nam,
+          neque, laborum mollitia doloribus aut ullam dignissimos,
+          exercitationem quos atque sed similique eaque? Deleniti vero
+          voluptatum illo quisquam cumque. Sit, recusandae rem doloribus omnis
+          eaque consequuntur!
+        </p>
+      </div>
+      <div class="seconddiv">
+        <div class="divforcaptionone">
+          <p class="captionone">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, ad
+            deserunt officia ducimus corporis.
+          </p>
         </div>
-        <div class="black-middle-layer">
-            <h1 class="three-headers three-headers-middle">Lorem Ipsum</h1>
-            <p class="three-text three-text-middle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore veniam fuga expedita enim quibusdam sint delectus vel temporibus, nam ad quaerat cupiditate sunt totam. Veritatis libero vel nulla tenetur fugiat, soluta doloribus quo molestias. Repellendus?</p>
-        </div>
-        <div class="white-bottom-layer">
-            <h1 class="three-headers">Lorem Ipsum</h1>
-            <p class="three-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis excepturi saepe pariatur dolorum nesciunt assumenda dolorem tenetur maiores optio, quasi ipsum, quisquam esse eveniet quos suscipit molestiae? Voluptatibus fugit eius doloremque inventore ratione beatae debitis.</p>
-            
-        </div>
-    </div>
-    <div class="three-cards">
-        <div class="first-card">
-            <h1 class="textforcards">Card 1</h1>
-            <p class="paratext">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis asperiores ipsum exercitationem molestias quas quam aspernatur optio quibusdam illo consequatur nemo cumque harum, possimus esse excepturi fuga maxime explicabo.</p>
-        </div>
-        <div class="second-card">
-            <h1 class="textforcards">Card 2</h1>
-            <p class="paratext">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis asperiores ipsum exercitationem molestias quas quam aspernatur optio quibusdam illo consequatur nemo cumque harum, possimus esse excepturi fuga maxime explicabo.</p>
-        </div>
-        <div class="third-card">
-            <h1 class="textforcards">Card 3</h1>
-            <p class="paratext">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis asperiores ipsum exercitationem molestias quas quam aspernatur optio quibusdam illo consequatur nemo cumque harum, possimus esse excepturi fuga maxime explicabo.</p>
-            
-        </div>  
+      </div>
+    </section>
+    <section class="threelayers">
+      <div class="layerone">
+        <p class="textforall">
+          <span class="firstspan">Text 1</span><br/><br/>Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Veritatis deserunt enim mollitia esse
+          nesciunt eaque nemo vitae nisi cupiditate consectetur voluptates, ex
+          ipsum, quia assumenda ut asperiores ipsa omnis. Aspernatur.
+        </p>
+      </div>
+      <div class="layertwo">
+        <p class="textforall">
+          <span class="firstspan">Text 2</span><br/><br/>Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Veritatis deserunt enim mollitia esse
+          nesciunt eaque nemo vitae nisi cupiditate consectetur voluptates, ex
+          ipsum, quia assumenda ut asperiores ipsa omnis. Aspernatur.
+        </p>
+      </div>
+      <div class="layerthree">
+        <p class="textforall">
+          <span class="firstspan">Text 3</span><br/><br/>Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Veritatis deserunt enim mollitia esse
+          nesciunt eaque nemo vitae nisi cupiditate consectetur voluptates, ex
+          ipsum, quia assumenda ut asperiores ipsa omnis. Aspernatur.
+        </p>
+      </div>
+    </section>
 
-    </div>
-    <div class="footer">
-        <p>&copy; Anay Sura</p>
+    <div class="lastsection">
+      <div class="bktop-overaly">
+        <button class="bktop">
+          <a class="bktop-function" href="#divfortower">Back to Top</a>
+        </button>
+      </div>
     </div>
 
-    <script src="main.js">
-       
-    </script>
-</body>
+    <script src="nointernet.js"></script>
+  </body>
 </html>
